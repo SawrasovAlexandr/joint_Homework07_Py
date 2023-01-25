@@ -9,9 +9,9 @@ def load_file(path_file: str, database: list = []) -> list:
         if database: load_base.pop(0)
         for i, item in enumerate(load_base, len(database)):
             item['ID'] = i
-            load_base.append(item)
-        load_base = database.extend(load_base)
+            database.append(item)
+        # database.extend(load_base)
     except:
         print('Ошибка загрузки файла!')
         load_base = []
-    return load_base
+    return database

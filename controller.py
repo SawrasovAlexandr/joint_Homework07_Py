@@ -3,12 +3,14 @@ import find
 import mod_imp
 import mod_exp
 import edit_db
+import os
 
 
 def click_button():
     path = 'database.csv'
     exit_db = True
-    view.show_database(main_data)
+    os.system('cls')
+    main_data = []
     while exit_db:
         num_menu = view.main_menu()
         if num_menu == '1':

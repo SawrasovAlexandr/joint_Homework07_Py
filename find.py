@@ -2,7 +2,7 @@
 # возвращаем вырезку из базы
 def find_cont(data_base: list, find_str: str, key: str) -> list:
     find_data = []
-    if not find_str:
+    if find_str:
         if key:
             for item in data_base:
                 if find_str.lower() in item[key].lower():
