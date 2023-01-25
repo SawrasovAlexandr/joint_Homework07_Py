@@ -1,5 +1,5 @@
-def add_cont(database, user_dict):
-    database.append(user_dict)
+def add_cont(database: list, contact: dict) -> list: 
+    database.append(contact)
     return database
     
 def del_cont(database, num_str):

@@ -1,3 +1,5 @@
+import init
+
 def main_menu():
     print('1. Показать справочник\n'
           '2. Поиск контактов\n'
@@ -18,15 +20,19 @@ def show_database(data_base):
 
 
 def second_menu(text):
-    a = input(text)
-    return(a)
+    return input(text)
 
+def select_key(text: str) -> str:
+    keys = init.get_temp_db_keys()
+    for i, item in enumerate(keys, 1):
+        print(f'{i}. {item}')
+    index = int(input(text)) - 1
+    return keys[index] if index in range(len(keys)) else ''
 
-
-def add_user():
-    f_name = input('Введите имя: ')
-    l_name = input('Введите фамилию: ')
-    phonenum = input('Введите номер телефона: ')
-    coment = input('Введите комментарий: ')
-    user_dict = {'Фамилия': l_name, 'Имя': f_name,'Телефон': phonenum, 'Комментарий': coment}
-    return user_dict
+def add_user() -> dict:
+    keys = init.get_main_db_keys()
+    cont_data = {}
+    print('Введите данные контакта:')
+    for item in keys:
+        cont_data[item] = input(item)
+    return cont_data
