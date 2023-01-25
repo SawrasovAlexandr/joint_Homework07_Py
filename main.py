@@ -1,5 +1,5 @@
 import controller
 
-controller.ClickButton()
+controller.click_button()
 
 # cont.init()
