@@ -1,16 +1,16 @@
 import csv
 
 def main_db(path_file: str) -> list:
-    with open(path_file, 'r', newline='', encoding = 'utf-8') as database:
-        main_db = csv.DictReader(database, fieldnames=get_main_db_keys(), delimiter=';')
-    return list(main_db)
+    with open(path_file, 'r', newline='', encoding = 'utf-8') as data:
+        database = csv.DictReader(data, fieldnames=get_main_db_keys(), delimiter=';')
+    return list(database)
     
-def temp_db(main_db: list) -> list:
-    temp_db = []
-    for i, item in enumerate(main_db):
+def temp_db(database: list) -> list:
+    datatemp = []
+    for i, item in enumerate(database):
             item['ID'] = i
-            temp_db.append(item)
-    return temp_db
+            datatemp.append(item)
+    return datatemp
         
 def get_main_db_keys() -> list:
         return ['Фамилия', 'Имя', 'Телефон', 'Комментарий']

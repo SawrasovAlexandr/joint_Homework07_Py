@@ -30,7 +30,7 @@ def select_key(text: str) -> str:
     return keys[index] if index in range(len(keys)) else ''
 
 def data_cont() -> dict:
-    keys = init.get_main_db_keys()
+    keys = init.get_temp_db_keys()
     cont_data = {}
     print('Введите данные контакта:')
     for item in keys:
