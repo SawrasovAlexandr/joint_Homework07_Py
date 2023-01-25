@@ -1,9 +1,20 @@
+import csv
 
-def init(path_file: str) -> list:
-    with open(path_file, 'r', encoding = 'UTF-8') as database:
-        temp_list = database.read().split('\n')
-    list_of_dict = []
-    for item in temp_list:
-        temp = item.split(';')
-        list_of_dict.append({'Фамилия': temp[0], 'Имя': temp[1],'Телефон': temp[2], 'Комментарий': temp[3]})
-    return list_of_dict
+def main_db(path_file: str) -> list:
+    with open(path_file, 'r', newline='', encoding = 'utf-8') as database:
+        main_db = csv.DictReader(database, fieldnames=get_main_db_keys(), delimiter=';')
+    return list(main_db)
+    
+def temp_db(main_db: list) -> list:
+    temp_db = []
+    for i, item in enumerate(main_db):
+            item['ID'] = i
+            temp_db.append(item)
+    return temp_db
+        
+def get_main_db_keys() -> list:
+        return ['Фамилия', 'Имя', 'Телефон', 'Комментарий']
+    
+def get_temp_db_keys() -> list:
+        return ['ID', 'Фамилия', 'Имя', 'Телефон', 'Комментарий']
+    
