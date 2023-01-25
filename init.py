@@ -16,5 +16,5 @@ def get_main_db_keys() -> list:
         return ['Фамилия', 'Имя', 'Телефон', 'Комментарий']
     
 def get_temp_db_keys() -> list:
-        return ['ID', 'Фамилия', 'Имя', 'Телефон', 'Комментарий']
+        return get_main_db_keys().insert(0, 'ID')
     
