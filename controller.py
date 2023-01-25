@@ -41,8 +41,9 @@ def ClickButton():
             view.show_database(temp_data)
         elif num_menu == '5':
             num_cont = view.second_menu('Введите строку удаляемого контакта: ')
-            main_data = edit_db.del_cont(main_data, num_cont)
-            quit()
+            main_data = edit_db.del_cont(main_data, int(num_cont))
+            clear()
+            view.show_database(temp_data)
         elif num_menu == '6':
             path_file = view.second_menu('Выберите файл для импорта: ')
             if mod_imp.load_file(path_file):
