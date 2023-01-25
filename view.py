@@ -29,7 +29,7 @@ def select_key(text: str) -> str:
     index = int(input(text)) - 1
     return keys[index] if index in range(len(keys)) else ''
 
-def add_user() -> dict:
+def data_cont() -> dict:
     keys = init.get_main_db_keys()
     cont_data = {}
     print('Введите данные контакта:')

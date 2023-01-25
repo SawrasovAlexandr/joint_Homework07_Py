@@ -31,12 +31,12 @@ def ClickButton():
             clear()
             view.show_database(temp_data)
         elif num_menu == '3':
-            main_data = edit_db.add_cont(main_data, view.add_user())
+            main_data = edit_db.add_cont(main_data, view.data_cont())
             clear()
             view.show_database(temp_data)
         elif num_menu == '4':
             num_cont = view.second_menu('Введите номер редактируемого контакта: ')
-            main_data = edit_db.edit_cont(main_data, num_cont)
+            main_data = edit_db.edit_cont(main_data, int(num_cont))
             clear()
             view.show_database(temp_data)
         elif num_menu == '5':
